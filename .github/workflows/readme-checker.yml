@@ -1,9 +1,9 @@
 name: Readme Checker
 
 on:
- pull_request:
-   branches:
-    - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   readme-checker:
