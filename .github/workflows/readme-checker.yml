@@ -15,6 +15,15 @@ jobs:
           ls -ali
           if [! -f README.md]; then
              exit 1
-          fi    
+          fi  
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+            VALIDATE_ALL_CODEBASE: true
+            VALIDATE_JAVASCRIPT_ES: true
+            VALIDATE_PYTHON_BLACK: true
+            VALIDATE_HTML: true
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+        
 
     
