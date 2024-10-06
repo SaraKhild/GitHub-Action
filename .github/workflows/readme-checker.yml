@@ -1,0 +1,29 @@
+name: Readme Checker
+
+on:
+  push:
+   branches:
+    - main
+
+jobs:
+  readme-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Readme Checker
+        run: |
+          ls -ali
+          if [! -f README.md]; then
+             exit 1
+          fi  
+      - name: Lint Code Base
+        uses: github/super-linter@v4
+        env:
+            VALIDATE_ALL_CODEBASE: true
+            VALIDATE_JAVASCRIPT_ES: true
+            VALIDATE_PYTHON_BLACK: true
+            VALIDATE_HTML: true
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
+        
+
+    
