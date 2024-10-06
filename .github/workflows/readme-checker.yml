@@ -1,7 +1,7 @@
 name: Readme Checker
 
 on:
-  push:
+ pull_request:
    branches:
     - main
 
