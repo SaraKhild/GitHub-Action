@@ -15,6 +15,6 @@ jobs:
 
         - name: Display Branch Name
          
-          run: echo "Current Branch $jobs.branch-name.env.BRANCH_NAME"
+          run: echo "Current Branch $BRANCH_NAME"
 
 
