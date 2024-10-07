@@ -9,12 +9,12 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Display First job Name
-          run: echo " ${{github.job.name}}"
+          run: echo " ${{ github.jobs[github.job].namee}}"
 
     second-job:
         runs-on: ubuntu-latest
         steps:        
           - name: Display Second job Name
-            run: echo " ${{github.job.name}}"
+            run: echo "${{ github.jobs[github.job].name}}"
 
 
