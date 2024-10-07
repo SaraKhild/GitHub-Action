@@ -6,12 +6,15 @@ on:
         - '*'   
 jobs:
     branch-name:
+        env: 
+            BRANCH_NAME: ${{ github.ref }}
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v2  
 
         - name: Display Branch Name
-          run: echo "Current Branch ${{ github.ref }}"
+         
+          run: echo "Current Branch $jobs.branch-name.env.BRANCH_NAME"
 
 
