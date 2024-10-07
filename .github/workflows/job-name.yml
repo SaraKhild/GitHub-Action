@@ -1,0 +1,20 @@
+name: Job Name
+on:
+ push:
+    branches:
+        - '*'   
+     
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Display First job Name
+          run: echo " ${{github.job.name}}"
+
+    second-job:
+        runs-on: ubuntu-latest
+        steps:        
+          - name: Display Second job Name
+            run: echo " ${{github.job.name}}"
+
+
