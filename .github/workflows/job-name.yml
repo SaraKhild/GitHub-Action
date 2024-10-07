@@ -3,18 +3,19 @@ on:
  push:
     branches:
         - '*'   
-     
+#env: 
+ #BRANCH_NAME: ${{ github.job }}         
 jobs:
     first-job:
         runs-on: ubuntu-latest
         steps:
         - name: Display First job Name
-          run: echo " ${{ github.jobs[github.job].namee}}"
+          run: echo " ${{ github.job}}"
 
     second-job:
         runs-on: ubuntu-latest
         steps:        
           - name: Display Second job Name
-            run: echo "${{ github.jobs[github.job].name}}"
+            run: echo "${{ github.job}}"
 
 
