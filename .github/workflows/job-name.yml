@@ -3,8 +3,7 @@ on:
  push:
     branches:
         - '*'   
-#env: 
- #BRANCH_NAME: ${{ github.job }}         
+      
 jobs:
     first-job:
         runs-on: ubuntu-latest
