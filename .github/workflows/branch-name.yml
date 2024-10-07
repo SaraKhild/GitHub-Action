@@ -4,10 +4,10 @@ on:
  push:
     branches:
         - '*'   
+env: 
+  BRANCH_NAME: ${{ github.ref }}        
 jobs:
     branch-name:
-        env: 
-            BRANCH_NAME: ${{ github.ref }}
         runs-on: ubuntu-latest
         steps:
         - name: Checkout Repository
