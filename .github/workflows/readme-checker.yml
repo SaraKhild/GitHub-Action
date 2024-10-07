@@ -1,6 +1,6 @@
 name: Readme Checker
 
-on:
+on: # deterim when it will run
   pull_request:
     branches:
       - main
