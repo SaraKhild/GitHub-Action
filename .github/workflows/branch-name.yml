@@ -1,0 +1,19 @@
+name: Branch Name
+
+on:
+ push:
+    branches:
+        - '*'   
+env: 
+  BRANCH_NAME: ${{ github.ref }}        
+jobs:
+    branch-name:
+        runs-on: ubuntu-latest
+        steps:
+
+        - name: Display Branch Name
+          #env: 
+            #BRANCH_NAME: ${{ github.ref }} 
+          run: echo "Current Branch $BRANCH_NAME"
+
+

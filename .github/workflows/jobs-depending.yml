@@ -1,0 +1,27 @@
+name: Jobs depends
+on:
+ push:
+    branches:
+        - '*'      
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        outputs: 
+            name: ${{steps.step1.outputs.name}}
+        steps:
+        - name:  First job 
+          id: step1
+          run: echo " name = SARA" >> $GITHUB_OUTPUT
+
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:        
+          - name:  Second job 
+            env:
+                NAME: ${{needs.job1.outputs.name}}
+            run: echo "name is $NAME"
+
+
+            
+
