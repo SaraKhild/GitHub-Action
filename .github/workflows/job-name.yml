@@ -2,13 +2,14 @@ name: Job Name
 on:
  push:
     branches:
-        - '*'   
-      
+        - '*'      
 jobs:
     first-job:
         runs-on: ubuntu-latest
         steps:
         - name: Display First job Name
+            #env:
+               #JOB_NAE:  then github.job
           run: echo " ${{ github.job}}"
 
     second-job:
